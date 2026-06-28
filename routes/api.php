@@ -1,0 +1,21 @@
+<?php
+
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\ProductController;
+use App\Http\Controllers\Api\OrderController;
+
+Route::get('/products', [ProductController::class, 'index']);
+
+Route::post('/orders',[OrderController::class,'store']);
+
+Route::get('/orders', [OrderController::class, 'index']);
+
+Route::patch('/orders/{id}', [OrderController::class, 'update']);
+
+Route::delete('/orders/{id}', [OrderController::class, 'destroy']);
+
+Route::delete('/products/{id}', [ProductController::class,'destroy']);
+
+Route::post('/products', [ProductController::class, 'store']);
+
+Route::put('/products/{id}', [ProductController::class, 'update']);
